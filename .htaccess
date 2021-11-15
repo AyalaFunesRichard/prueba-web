@@ -1,0 +1,15 @@
+# root folder
+
+DirectoryIndex index
+
+#Order Allow,Deny
+#Allow from all
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}/.html -f
+RewriteRule ^(.*)$ $1.html [NC,L,R=301]
+
+
+ErrorDocument 404 http://sonrisasysalud.com/404
+ErrorDocument 403 http://sonrisasysalud.com/403
